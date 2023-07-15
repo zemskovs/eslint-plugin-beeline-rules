@@ -28,5 +28,10 @@
   "peerDependencies": {
     "eslint": ">=6"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "tests"
+  }
 }
