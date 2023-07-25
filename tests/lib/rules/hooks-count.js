@@ -11,21 +11,50 @@
 const rule = require("../../../lib/rules/hooks-count"),
   RuleTester = require("eslint").RuleTester;
 
-
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+      modules: true,
+      experimentalObjectRestSpread: true,
+    },
+  },
+});
 ruleTester.run("hooks-count", rule, {
   valid: [
-    // give me some code that won't trigger a warning
+    `
+    import React, { useState } from 'react';
+
+    const SimpleComponent = () => {
+      const [count, setCount] = useState();
+
+      return <div></div>
+    }`.trim(),
   ],
 
   invalid: [
     {
-      code: "asfsa",
-      errors: [{ message: "Fill me in.", type: "Me too" }],
+      code: `
+        import React, { useState } from 'react';
+
+        const SimpleComponent = () => {
+          const [count, setCount] = useState();
+          const [time, setTime] = useState();
+
+          return <div></div>
+        }`.trim(),
+      errors: [
+        {
+          message:
+            "Слшишком много хуков в этом комопоненте. Максимально допустимо 1.",
+        },
+      ],
     },
   ],
 });

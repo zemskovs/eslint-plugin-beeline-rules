@@ -1,4 +1,4 @@
-# feature sliced relative path checker (path-checker)
+# Подсчет количесва хуков в комопоненте
 
 Please describe the origin of the rule here.
 

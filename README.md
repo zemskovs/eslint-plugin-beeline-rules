@@ -1,45 +1,45 @@
-# eslint-plugin-beeline-rules
+# eslint-plugin-beeline-rules-tets
 
-plugin for production project
+Тестовая реализация набора правил beeline для фронтенд разработки
 
-## Installation
+## Установка
 
-You'll first need to install [ESLint](https://eslint.org/):
+Для начала нужно установить eslint [ESLint](https://eslint.org/):
 
 ```sh
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-beeline-rules`:
+Далее установить плагин `eslint-plugin-beeline-rules-test`:
 
 ```sh
-npm install eslint-plugin-beeline-rules --save-dev
+npm install eslint-plugin-beeline-rules-test --save-dev
 ```
 
-## Usage
+## Использование
 
-Add `beeline-rules` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Необходимо добавить `beeline-rules-test` в секцию плагинов в `.eslintrc`. Приставку `eslint-plugin-` можно пропустить:
 
 ```json
 {
     "plugins": [
-        "beeline-rules"
+        "beeline-rules-test"
     ]
 }
 ```
 
 
-Then configure the rules you want to use under the rules section.
+Для настройки правил воспользуйтесь соответствующей секцией
 
 ```json
 {
     "rules": {
-        "beeline-rules/rule-name": 2
+        "beeline-rules-test/rule-name": 2
     }
 }
 ```
 
-## Supported Rules
+## Поддерживаемые правила
 
 * Fill in provided rules here
 
